@@ -1,6 +1,6 @@
 @font-face {
  font-family: cascadia;
- src: url(fonts/CascadiaMonoPL.ttf);
+ src: url(CascadiaMonoPL.ttf);
 }
 @keyframes cursor {
   0%, 100% {
