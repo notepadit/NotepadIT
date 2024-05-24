@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Notepad IT</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Notepad IT [Version 1.0.5.2024]<br>(c) IT Administrator Corporation. Wszelkie prawa zastrzeżone.</h1>
+<h2>PS C:\Users\it-admin> GENEROWANIE LISTY UPRAWNIEŃ NTFS UŻYTKOWNIKÓW</h2>
+
+<p class="space1">Skrypt:</p>
+<p>$FolderPath = Get-ChildItem -Directory -Path "D:\SSW" -Recurse -Force<br>
+    $Output = @()<br></p>
+<p class="space2">ForEach ($Folder in $FolderPath) {<br>
+        $Acl = Get-Acl -Path $Folder.FullName<br>
+        ForEach ($Access in $Acl.Access) {<br>
+    $Properties = [ordered]@{'Folder Name'=$Folder.FullName;'Group/User'=$Access.IdentityReference;'Permissions'=$Access.FileSystemRights}<br>
+    $Output += New-Object -TypeName PSObject -Property $Properties<br>            
+    }<br>
+    }<br></p>
+<p class="space3a">$Output | Out-GridView<br>
+    #Out-File E:\test.rtf</p>
+
+<p class="space3"><a href="javascript:window.history.back();">WSTECZ</a>
+
+</body>
+</html>

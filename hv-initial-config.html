@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Notepad IT</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Notepad IT [Version 1.0.5.2024]<br>(c) IT Administrator Corporation. Wszelkie prawa zastrzeżone.</h1>
+<h2>PC C:\Users\it-admin> WSTĘPNA KONFIGURACJA SYSTEMU WINDOWS SERVER</h2>
+
+<p class="space1">Utworzenie folderów docelowych dla plików VM oraz VHDx:</p>
+<p class="space2">Komenda 1: New-Item E:\VM -ItemType Directory</p>
+<p>Komenda 2: New-Item E:\VHD -ItemType Directory</p>
+<p>Instalacja roli serwera Hyper-V (wymagany restart):</p>
+<p>Komenda 3: Install-WindowsFeature Hyper-V -IncludeManagementTools -Restart</p>
+<p>Instalacja narzędzi do zdalnego zarządzania serwerem Hyper-V:</p>
+<P>Komenda 4: Install-WindowsFeature RSAT-Hyper-V-Tools</P>
+<p>Konfiguracja serwera Hyper-V do używania folderów docelowych VM/VHDx:</p>
+<p>Komenda 5: Set-VMHost -ComputerName HV01 -VirtualHardDiskPath E:\vhd -VirtualMachinePath E:\vm</p>
+<p>Potwierdzenie poprawności konfiguracji:</p>
+<p>Komenda 6: Get-VMHost -ComputerName HV01 | Format-List *</p>
+
+<p><a href="javascript:window.history.back();">WSTECZ</a>
+
+</body>
+</html>
